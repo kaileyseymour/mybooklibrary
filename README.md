@@ -13,3 +13,8 @@ A visualization of my book library from Goodreads
 * Bookshelves, Executive Shelf
 ### *Added Info*
 * Series, Smut/Clean, Favorite Authors
+### *Routes*
+* /books
+* /books/<id>
+* /books/create
+* /books/delete/<id>
