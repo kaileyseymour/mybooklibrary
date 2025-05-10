@@ -6,7 +6,6 @@
 
 <script>
 import axios from 'axios';
-import BookCard from './bookCard.vue';
 
 export default {
     name:'home',
@@ -38,7 +37,7 @@ export default {
         }
     },
     components: {
-      'BookCard':BookCard
+      
     }
 }
 </script>
@@ -47,7 +46,6 @@ export default {
 
 .container {
     display:inline-grid;
-    
 }
 
 img {
