@@ -1,43 +1,22 @@
 <script setup>
-import TitlePage from './components/titlePage.vue';
-import ContentPage from './components/ContentPage.vue';
+import Home from './components/home.vue';
+import NavBar from './components/navBar.vue';
 </script>
 
 <template>
   <header>
-    <TitlePage></TitlePage>
+    <h1>Kailey's Books</h1>
   </header>
-
+  <nav>
+    <NavBar></NavBar>
+  </nav>
   <main>
-    <ContentPage></ContentPage>
+    <RouterView />
   </main>
 </template>
 
 <style scoped>
-header {
-  line-height: 1.5;
-}
-
-.logo {
-  display: block;
-  margin: 0 auto 2rem;
-}
-
-@media (min-width: 1024px) {
-  header {
-    display: flex;
-    place-items: center;
-    padding-right: calc(var(--section-gap) / 2);
-  }
-
-  .logo {
-    margin: 0 2rem 0 0;
-  }
-
-  header .wrapper {
-    display: flex;
-    place-items: flex-start;
-    flex-wrap: wrap;
-  }
+h1,nav {
+  padding-left: 15px;
 }
 </style>
