@@ -1,10 +1,19 @@
 import { fileURLToPath, URL } from 'node:url'
-
+import { dirname, resolve } from 'node:path'
 import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
 
-// https://vite.dev/config/
+const __dirname = dirname(fileURLToPath(import.meta.url))
+
 export default defineConfig({
+  build: {
+    rollupOptions: {
+      input: {
+        main: resolve(__dirname, 'index.html'),
+        nested: resolve(__dirname, 'src/App.vue')
+      }
+    }
+  },
   plugins: [
     vue({
       template: {
