@@ -33,7 +33,7 @@ export default {
     },
     methods: {
         retrieveCover(book) {
-            return "src/images/" + book[0];
+            return "/" + book[0];
         }
     },
     components: {
