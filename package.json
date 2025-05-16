@@ -15,12 +15,13 @@
     "vue-router": "^4.5.1"
   },
   "devDependencies": {
+    "@fortawesome/fontawesome-free": "^5.15.4",
     "@vitejs/plugin-vue": "^5.2.3",
     "vite": "^6.2.4",
     "vite-plugin-vue-devtools": "^7.7.2"
   },
   "optionalDependencies": {
-    "@rollup/rollup-linux-x64-gnu": "^4.40.2",
-    "@esbuild/linux-x64": "^0.25.4"
+    "@esbuild/linux-x64": "^0.25.4",
+    "@rollup/rollup-linux-x64-gnu": "^4.40.2"
   }
 }

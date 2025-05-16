@@ -1,5 +1,4 @@
 <script setup>
-import Home from './components/home.vue';
 import NavBar from './components/navBar.vue';
 </script>
 
@@ -11,7 +10,6 @@ import NavBar from './components/navBar.vue';
     <NavBar></NavBar>
   </nav>
   <main>
-    <Home />
     <RouterView />
   </main>
 </template>
