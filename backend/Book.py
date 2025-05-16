@@ -11,30 +11,13 @@ class Book:
     def get_books(self,connection):
         cursor = connection.cursor()
         cursor.execute("SELECT * FROM mybooks")
-        return cursor.fetchall()
-        
-        # rows = cursor.fetchall()
-        # columns = [column[0] for column in cursor.description]
-        # output = []
-        # for row in rows:
-        #     row_dict = {columns[i]: row[i] for i in range(len(columns))}
-        #     output.append(row_dict)
-        # return json.dumps(output)
+        output = cursor.fetchall()
+        return list(output)
 
-    def handle_fetch():
-        print('fetching all')
-        db = get_db_connection()
-        cur = db.cursor(cursor_factory=psycopg2.extras.RealDictCursor)
-        cur.execute('SELECT * FROM guitars;')
-        guitar_data = cur.fetchall()
-        cur.close()
-        db.close()
-        return jsonify(guitar_data)
-
-    # get book by ID
-    def get_book_by_id(self, connection, id):
+    # get book by ISBN
+    def get_book_by_isbn(self, connection, isbn):
         cursor = connection.cursor()
-        sql = "SELECT * FROM `mybooks` WHERE `id`={}".format(id)
+        sql = "SELECT * FROM `mybooks` WHERE `isbn`={}".format(isbn)
         cursor.execute(sql)
         output = cursor.fetchall()
         return output
@@ -55,4 +38,3 @@ class Book:
         connection.commit()
         output = cursor.fetchall()
         return output
-        

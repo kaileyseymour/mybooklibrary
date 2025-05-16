@@ -18,7 +18,7 @@ export default defineConfig({
     vue({
       template: {
         compilerOptions: {
-          isCustomElement: (tag) => ['BookCard'].includes(tag),
+          isCustomElement: (tag) => ['book'].includes(tag),
         }
       }
     })

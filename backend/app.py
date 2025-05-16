@@ -4,7 +4,7 @@ import sqlite3
 from sqlite3 import Error
 from Book import Book
 
-conn = sqlite3.connect("mybooks.db",check_same_thread=False)
+conn = sqlite3.connect("mybooks.db", check_same_thread=False)
 app = Flask(__name__)
 CORS(app)
 book_instance = Book()
@@ -18,14 +18,14 @@ def getAllBooks():
     except Exception as e:
         return jsonify({"message":str(e)})
 
-# get single book by ID
-@app.route("/books/<id>")
-def getBookByID(id):
+# get single book by ISBN
+@app.route("/books/<isbn>", methods=["GET"])
+def getBookByISBN(isbn):
     try:
-        book = book_instance.get_book_by_id(conn, id)
+        book = book_instance.get_book_by_isbn(conn, isbn)
         return jsonify(book)
     except Exception as e:
-        return jsonify({"message":"Invalid Book ID"})
+        return jsonify({"message":"Invalid Book ISBN"})
 
 # create a new book
 @app.route("/books/create")
